@@ -84,7 +84,7 @@ const dexs: Playbook = (c) => [
 ];
 
 const bridge: Playbook = (c) => [
-  `Open ${c.name}, connect a dedicated wallet and check which routes it supports between ${c.chainList}; read the fee schedule and any points page first, 15 minutes and no spend.`,
+  `Open ${c.name}, connect a dedicated wallet and check which routes it supports ${c.chainList.includes(' and ') || c.chainList.includes(',') ? `between ${c.chainList}` : `into and out of ${c.mainChain}`}; read the fee schedule and any points page first, 15 minutes and no spend.`,
   `Bridge ${c.capital} of ETH or a major stablecoin across ${c.name} once a week for 6-8 weeks, alternating direction; each crossing costs the bridge fee (usually 0.05-0.5%) plus ${c.gas} on the source chain.`,
   `Vary the routes: use at least three different source-destination pairs ${c.name} offers instead of repeating one corridor, about 5 minutes of planning per trip; route diversity is a common scoring axis.`,
   `Keep a small balance (about 10% of your capital) parked on the destination side for a few days after each crossing rather than bridging straight back; instant round trips look like farming and are often filtered out.`,

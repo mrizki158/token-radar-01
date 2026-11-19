@@ -167,7 +167,7 @@ export function buildRadar(snapshot: Snapshot): { board: BoardRow[]; radar: Rada
     name: s.p.name,
     rank: i + 1,
     implied_value_usd: s.implied,
-    farm_steps: farmStepsFor(s.p),
+    farm_steps: farmStepsFor({ name: s.p.name, category: s.p.category, chains: s.p.chains, tvlUsd: s.p.tvl_usd }),
     category: s.p.category,
     chains: s.p.chains,
     tvl_usd: s.p.tvl_usd,

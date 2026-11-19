@@ -215,7 +215,7 @@
       '<ol class="farm">' + top.map(function (r) {
         return '<li><strong>' + esc(r.name) + '</strong> — ' + money(r.implied_value_usd) + ' implied on ' + money(r.tvl_usd) + ' TVL (' + esc(r.category || 'uncategorised') + ')</li>';
       }).join('') + '</ol>' +
-      '<p class="hint">Click any row for its breakdown and farm plan. Starred rows are on the snapshot\'s watchlist: pre-token protocols above the ' + money(DATA.floor_usd) + ' TVL floor.</p>';
+      '<p class="hint">Click any row for its breakdown and farm plan. Rows badged Watchlist are on the snapshot\'s watchlist: pre-token protocols above the ' + money(DATA.floor_usd) + ' TVL floor.</p>';
   }
 
   rowsEl.addEventListener('click', function (ev) {
