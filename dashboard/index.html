@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="scope" aria-hidden="true"><span class="sweep"></span><span class="blip b1"></span><span class="blip b2"></span><span class="blip b3"></span></div>
+  <div class="title-block">
+    <h1>Token Launch Radar</h1>
+    <p class="tagline">Every protocol that records no token yet, ranked by what its token would be worth if the record stayed as it is — and how to farm each one before it launches.</p>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<section class="model-strip">
+  <span class="formula">implied value = TVL &times; category multiple &times; momentum &times; maturity</span>
+  <span class="formula-note">The multiple is the median market-cap/TVL of the snapshot's own tokened protocols in the same category (global median when a category has fewer than 3 tokened peers). Momentum reads the 7-day TVL change, maturity the length of the track record. Click any row for its full breakdown.</span>
+</section>
+
+<div class="controls">
+  <label class="ctl grow">Search
+    <input id="q" type="search" placeholder="Protocol name or slug" autocomplete="off">
+  </label>
+  <label class="ctl">Category
+    <select id="f-category"><option value="">All categories</option></select>
+  </label>
+  <label class="ctl">Chain
+    <select id="f-chain"><option value="">All chains</option></select>
+  </label>
+  <label class="ctl check">
+    <input id="f-watch" type="checkbox">
+    <span>Watchlist only</span>
+  </label>
+  <span class="count" id="count"></span>
+</div>
+
+<main class="layout">
+  <div class="table-wrap">
+    <table id="board">
+      <thead><tr id="head-row"></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="empty" id="empty" hidden>No protocol matches these filters.</p>
+  </div>
+  <aside class="detail" id="detail" aria-live="polite"></aside>
+</main>
+
+<footer>
+  <p>Built from a sealed DefiLlama snapshot: TVL, 7-day change, listing dates and market caps exactly as recorded on the snapshot date shown above. A protocol here records no token in that snapshot; that is not proof it has none. Implied value is this radar's own model claim, not a prediction that a token will be issued or what it would trade at.</p>
+</footer>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
